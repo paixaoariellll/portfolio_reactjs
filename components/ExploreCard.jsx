@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { fadeIn } from '../utils/motion';
 import styles from '../styles';
-import Image from 'next/image';
 import headset from '../public/headset.svg';
 
 const ExploreCard = ({ id, title, imgUrl, index, active, handleClick }) => (
@@ -21,7 +21,7 @@ const ExploreCard = ({ id, title, imgUrl, index, active, handleClick }) => (
       alt={title}
       width={50}
       height={50}
-      unoptimized={true}
+      unoptimized
       className="absolute w-full h-full object-cover rounded-[24px]"
     />
     {active !== id ? (
@@ -38,7 +38,7 @@ const ExploreCard = ({ id, title, imgUrl, index, active, handleClick }) => (
             alt="headset"
             width={10}
             height={10}
-            unoptimized={true}
+            unoptimized
             className="w-1/2 h-1/2 object-contain"
           />
         </div>
