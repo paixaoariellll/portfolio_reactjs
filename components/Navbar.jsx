@@ -1,10 +1,10 @@
 'use client';
 
+import { ImSearch } from 'react-icons/im';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from '../styles';
 import { navVariants } from '../utils/motion';
-import { ImSearch } from 'react-icons/im';
-import Image from 'next/image';
 import Menu from '../public/menu.svg';
 
 const Navbar = () => (
@@ -14,7 +14,7 @@ const Navbar = () => (
     whileInView="show"
     className={`${styles.xPaddings} py-8 relative `}
   >
-    <div className="absolute w-[50%] inset-0 gradient-01"></div>
+    <div className="absolute w-[50%] inset-0 gradient-01" />
     <div
       className={`${styles.innerWidth} mx-auto flex items-center justify-between gap-8`}
     >
