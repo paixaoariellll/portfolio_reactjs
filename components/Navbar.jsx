@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import styles from "../styles";
-import { navVariants } from "../utils/motion";
-import { ImSearch } from "react-icons/im";
-import Image from "next/image";
-import Menu from "../public/menu.svg";
+import { motion } from 'framer-motion';
+import styles from '../styles';
+import { navVariants } from '../utils/motion';
+import { ImSearch } from 'react-icons/im';
+import Image from 'next/image';
+import Menu from '../public/menu.svg';
 
 const Navbar = () => (
   <motion.nav
