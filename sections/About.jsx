@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { TypingText } from "../components/CustomTexts";
-import styles from "../styles";
-import { fadeIn, staggerContainer } from "../utils/motion";
+import { motion } from 'framer-motion';
+import { TypingText } from '../components/CustomTexts';
+import styles from '../styles';
+import { fadeIn, staggerContainer } from '../utils/motion';
 
 const About = () => (
   <section className={`${styles.paddings} z-10`}>
@@ -19,7 +19,7 @@ const About = () => (
       />
 
       <motion.p
-        variants={fadeIn("up", "tween", 2.2, 1)}
+        variants={fadeIn('up', 'tween', 2.2, 1)}
         className={`${styles.xPaddings} mt-2 flex font-normal sm:text-2xl text-xl text-center text-secoundary-white`}
       >
         <span className="w-2/4 font-extrabold text-white">Sou auto Didata</span>
