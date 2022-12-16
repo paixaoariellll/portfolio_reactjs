@@ -38,7 +38,10 @@ const Hero = () => (
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
-        <a className={`${styles.flexCenter} gap-x-4 mb-48 text-white text-4xl`}>
+        <a
+          href
+          className={`${styles.flexCenter} gap-x-4 mb-48 text-white text-4xl`}
+        >
           <motion.li variants={textVariant(2.0)}>
             <AiFillGithub title="GitHub" />
           </motion.li>

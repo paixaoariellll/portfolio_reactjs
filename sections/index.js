@@ -2,6 +2,7 @@ import Hero from './Hero';
 import About from './About';
 import About2 from './About2';
 import About3 from './About3';
+import About4 from './About3';
 import Explore from './Explore';
 import GetStarted from './GetStarted';
 import WhatsNew from './WhatsNew';
@@ -14,6 +15,7 @@ export {
   About,
   About2,
   About3,
+  About4,
   Explore,
   GetStarted,
   WhatsNew,
