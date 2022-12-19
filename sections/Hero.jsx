@@ -6,7 +6,10 @@ import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 import { AiFillGithub, AiFillLinkedin, AiFillHtml5 } from 'react-icons/ai';
 
 const Hero = () => (
-  <section className={`${styles.yPaddings} sm:16 sm:pl-6 min-h-screen`}>
+  <section
+    id="Hero"
+    className={`${styles.yPaddings} sm:16 sm:pl-6 min-h-screen`}
+  >
     <motion.div
       variants={staggerContainer}
       initial="hidden"
