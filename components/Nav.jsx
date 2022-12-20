@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
+import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 
 const Nav = () => (
   <motion.div
@@ -31,7 +31,7 @@ const Nav = () => (
         variants={textVariant(2.4)}
         className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
       >
-        <Link href="#">
+        <Link href="#Hero">
           <AiOutlineUser className="icon" />
         </Link>
       </motion.li>
@@ -39,7 +39,7 @@ const Nav = () => (
         variants={textVariant(2.6)}
         className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
       >
-        <Link href="#">
+        <Link href="#Hero">
           <AiOutlineHome className="icon" />
         </Link>
       </motion.li>
@@ -47,7 +47,7 @@ const Nav = () => (
         variants={textVariant(2.8)}
         className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
       >
-        <Link href="#">
+        <Link href="#Hero">
           <AiOutlineHome className="icon" />
         </Link>
       </motion.li>
@@ -55,7 +55,7 @@ const Nav = () => (
         variants={textVariant(3.0)}
         className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
       >
-        <Link href="#">
+        <Link href="#Hero">
           <AiOutlineHome className="icon" />
         </Link>
       </motion.li>
@@ -63,8 +63,12 @@ const Nav = () => (
   </motion.div>
 );
 
-const Icons = document.querySelector('.navigation .icon');
-
+/* const Icons = document.querySelector('.navigation .icon');
+function changeactive() {
+  Icons.forEach(icon => {
+    icon.classList.remove('active-nav');
+  });
+}
 function navLinks() {
   Icons.forEach(icon => {
     icon.addEventListener('click', () => {
@@ -73,11 +77,6 @@ function navLinks() {
     });
   });
 }
-console.log(navLinks);
-function changeactive() {
-  Icons.forEach(icon => {
-    icon.classList.remove('active-nav');
-  });
-}
+console.log(navLinks); */
 
 export default Nav;
