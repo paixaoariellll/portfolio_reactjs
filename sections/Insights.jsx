@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 const Insights = () => <section>Insights section</section>;
 

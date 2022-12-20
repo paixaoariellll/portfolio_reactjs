@@ -17,11 +17,11 @@ const Nav = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="flex flex-col justify-between gap-y-5 text-3xl relative text-indigo-800"
+      className="flex flex-col justify-between gap-y-5 text-3xl relative text-secondary-white"
     >
       <motion.li
         variants={textVariant(2.2)}
-        className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
+        className="hover:bg-primary-white rounded-full p-2"
       >
         <Link href="#Hero">
           <AiOutlineHome className="icon active-icon" />
@@ -29,7 +29,7 @@ const Nav = () => (
       </motion.li>
       <motion.li
         variants={textVariant(2.4)}
-        className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
+        className=" hover:text-white rounded-full p-2"
       >
         <Link href="#Hero">
           <AiOutlineUser className="icon" />
@@ -37,7 +37,7 @@ const Nav = () => (
       </motion.li>
       <motion.li
         variants={textVariant(2.6)}
-        className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
+        className=" hover:text-white rounded-full p-2"
       >
         <Link href="#Hero">
           <AiOutlineHome className="icon" />
@@ -45,7 +45,7 @@ const Nav = () => (
       </motion.li>
       <motion.li
         variants={textVariant(2.8)}
-        className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
+        className=" hover:text-white rounded-full p-2"
       >
         <Link href="#Hero">
           <AiOutlineHome className="icon" />
@@ -53,7 +53,7 @@ const Nav = () => (
       </motion.li>
       <motion.li
         variants={textVariant(3.0)}
-        className="bg-primary-black hover:bg-secondary-white rounded-full p-2"
+        className=" hover:text-white rounded-full p-2"
       >
         <Link href="#Hero">
           <AiOutlineHome className="icon" />
