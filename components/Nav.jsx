@@ -2,81 +2,41 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
-import { slideIn, staggerContainer, textVariant } from '../utils/motion';
+import { slideIn } from '../utils/motion';
+import { navbarItems } from '../constants';
 
 const Nav = () => (
   <motion.div
+    id="nav"
     variants={slideIn('left', 'tween', 0.5, 1)}
     initial="hidden"
     whileInView="show"
-    className="fixed z-30 left-[20px] rounded-full shadow-md shadow-slate-50 p-2"
+    className="p-2 z-30 top-0 flex flex-col justify-center h-screen fixed shadow-md shadow-slate-50 left-[10px]"
   >
-    <motion.ul
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      className="flex flex-col justify-between gap-y-5 text-3xl relative text-secondary-white"
-    >
-      <motion.li
-        variants={textVariant(2.2)}
-        className="hover:bg-primary-white rounded-full p-2"
-      >
-        <Link href="#Hero">
-          <AiOutlineHome className="icon active-icon" />
-        </Link>
-      </motion.li>
-      <motion.li
-        variants={textVariant(2.4)}
-        className=" hover:text-white rounded-full p-2"
-      >
-        <Link href="#Hero">
-          <AiOutlineUser className="icon" />
-        </Link>
-      </motion.li>
-      <motion.li
-        variants={textVariant(2.6)}
-        className=" hover:text-white rounded-full p-2"
-      >
-        <Link href="#Hero">
-          <AiOutlineHome className="icon" />
-        </Link>
-      </motion.li>
-      <motion.li
-        variants={textVariant(2.8)}
-        className=" hover:text-white rounded-full p-2"
-      >
-        <Link href="#Hero">
-          <AiOutlineHome className="icon" />
-        </Link>
-      </motion.li>
-      <motion.li
-        variants={textVariant(3.0)}
-        className=" hover:text-white rounded-full p-2"
-      >
-        <Link href="#Hero">
-          <AiOutlineHome className="icon" />
-        </Link>
-      </motion.li>
-    </motion.ul>
+    <div className="flex flex-col  gap-6">
+      {navbarItems.map((item) => (
+        <nav key={item.title}>
+          <Link
+            href={item.href}
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById(item.href.substring(1));
+              element.scrollIntoView();
+            }}
+          >
+            <div className="rounded-full hover:bg-slate-900 text-secondary-white hover:text-white hover:shadow-md hover:shadow-black transition-all p-2 shadow-sm shadow-slate-900">
+              <div
+                className={`text-${item.icon}-500 text-3xl `}
+                title={`${item.title}`}
+              >
+                <item.icon />
+              </div>
+            </div>
+          </Link>
+        </nav>
+      ))}
+    </div>
   </motion.div>
 );
-
-/* const Icons = document.querySelector('.navigation .icon');
-function changeactive() {
-  Icons.forEach(icon => {
-    icon.classList.remove('active-nav');
-  });
-}
-function navLinks() {
-  Icons.forEach(icon => {
-    icon.addEventListener('click', () => {
-      changeactive();
-      icon.classList.add('active-nav');
-    });
-  });
-}
-console.log(navLinks); */
 
 export default Nav;

@@ -3,5 +3,6 @@
   "trailingComma": "all",
   "singleQuote": true,
   "printWidth": 80,
-  "arrowParens": "avoid"
+  "prettier.tabWidth": 4,
+  "prettier.useTabs": true
 }

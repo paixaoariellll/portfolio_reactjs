@@ -1,21 +1,18 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { AiFillGithub, AiFillLinkedin, AiFillHtml5 } from 'react-icons/ai';
 import styles from '../styles';
 import { slideIn, staggerContainer, textVariant } from '../utils/motion';
-import { AiFillGithub, AiFillLinkedin, AiFillHtml5 } from 'react-icons/ai';
 
 const Hero = () => (
-  <section
-    id="Hero"
-    className={`${styles.yPaddings} sm:16 sm:pl-6 min-h-screen`}
-  >
+  <section id="Hero" className={`${styles.yPaddings} sm:pr-6 sm:pl-6 `}>
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col`}
+      viewport={{ once: true, amount: 0.25 }}
+      className={`${styles.innerWidth} mx-auto h-screen flex flex-col`}
     >
       <div className="flex justify-between items-center flex-col relative z-10">
         <motion.h1 variants={textVariant(1.1)} className={styles.heroHeading}>
@@ -30,21 +27,20 @@ const Hero = () => (
       </div>
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
-        className="relative w-full md:-mt-[20px] -mt-[12px]"
+        className="relative w-full md:pl-12 md:-mt-[20px] -mt-[12px]"
       >
-        <div className="w-full bg-white h-2 mb-20" />
+        <div
+          className={`${styles.xPaddings} w-full bg-gradient-to-l from-[#6f0098] to-[#c1bfc3] shadow-sm shadow-blue-500 rounded-full h-2 mb-20`}
+        />
       </motion.div>
       <motion.ul
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
+        viewport={{ once: true, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
-        <a
-          href
-          className={`${styles.flexCenter} gap-x-4 mb-48 text-white text-4xl`}
-        >
+        <div className={`${styles.flexCenter} gap-x-4 text-white text-4xl`}>
           <motion.li variants={textVariant(2.0)}>
             <AiFillGithub title="GitHub" />
           </motion.li>
@@ -54,7 +50,7 @@ const Hero = () => (
           <motion.li variants={textVariant(2.4)}>
             <AiFillHtml5 title="Portfólio Html_5" />
           </motion.li>
-        </a>
+        </div>
       </motion.ul>
     </motion.div>
   </section>
