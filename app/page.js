@@ -9,13 +9,15 @@ https://www.shadertoy.com/embed/4ttSWf? floresta de montanhas
  */
 const Page = () => (
   <>
-    <Navbar />
+    <div className='absolute z-50'>
+      <Navbar />
+      <Nav />
+    </div>
     <iframe
       title="bg"
       className="w-full z-10 fixed min-h-screen "
       src="https://www.shadertoy.com/embed/XtGGRt?gui=true&t=10&paused=false&muted=true&autoplay=1" />
     <div className="overflow-hidden max-w-screen">
-      <Nav />
       <Hero />
       <Who />
       <div className="grid bg-[rgba(0,0,0,0.8)] grid-cols-2 gap-2 z-0 pointer-events-none">
