@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { navbarItems } from '../constants';
 
-const Nav = () => {
+function Nav() {
   return (
     <div className="p-2 z-50 bottom-0 flex flex-row justify-center fixed bg-black h-14 w-full">
       <div className="flex flex-row gap-6">
@@ -41,6 +41,6 @@ const Nav = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Nav;
