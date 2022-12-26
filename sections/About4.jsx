@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { TypingText } from '../components/CustomTexts';
 import styles from '../styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
 
@@ -11,25 +12,31 @@ const About4 = () => (
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
+      className="py-5"
     >
+      <TypingText
+        title="Disciplinado"
+        textStyles="text-2xl w-full text-center font-extrabold"
+      />
       <motion.p
         variants={fadeIn('left', 'tween', 0, 1)}
-        className={`${styles.xPaddings} mt-2 flex font-normal sm:text-xl text-lg  text-center text-secoundary-white`}
+        className={`${styles.xPaddings}`}
       >
-        <span className="w-2/4 font-extrabold text-white">
-          Sou disciplinado
-        </span>
-        <span className="w-3/4 text-gray-400 text-justify">
-          <span className="flex text-white mb-2">Herança proloquial</span>
-          "Sou filho de militar "raiz",na infância tinha hora pra comer, dormir,
-          ler, brincar e estudar.
-          <br />
-          Dentre tantos benefícios de ser disciplinado, chamo atenção à auto
-          confiança, alguém que sabe exatamente como é, sabe como lidar com
-          circunstâncias que pra outros são incômodas.
-          <br />
-          Sei cumprir regras, prazos e quando dou minha palavra, por herança de
-          princípios, eu cumpro."
+        <span className="mt-2 flex flex-col bg-[rgb(26,26,26)] rounded-xl p-4 w-full font-normal sm:text-xl text-lg text-center">
+          <span className="text-xl mb-4 text-center w-full font-extrabold text-gray-400">
+            Herança proloquial
+          </span>
+          <span className="!text-gray-300 text-justify">
+            "Sou filho de militar "raiz",na infância tinha hora pra comer,
+            dormir, ler, brincar e estudar.
+            <br />
+            Dentre tantos benefícios de ser disciplinado, chamo atenção à auto
+            confiança, alguém que sabe exatamente como é, sabe como lidar com
+            circunstâncias que pra outros são incômodas.
+            <br />
+            Sei cumprir regras, prazos e quando dou minha palavra, por herança
+            de princípios, eu cumpro."
+          </span>
         </span>
       </motion.p>
     </motion.div>

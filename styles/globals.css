@@ -44,7 +44,7 @@
 }
 
 .glassmorphism {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.1);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(1px);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -77,6 +77,13 @@
       rgba(255, 255, 255, 0.04) 0%,
       rgba(255, 255, 255, 0) 100%);
 }
+
+/* .bg {
+  background: url(../public/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+} */
 
 .feedback-gradient {
   position: absolute;

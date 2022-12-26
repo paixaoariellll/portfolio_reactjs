@@ -62,8 +62,8 @@ export const projects = [
   {
     id: 'project05',
     imgUrl: project05,
-    link: 'https://raphael-motorista.vercel.app',
-    title: 'Site de Cartão Pessoal',
+    link: 'https://ariel-paixao.vercel.app',
+    title: 'Site Pessoal',
     description: 'Uma página web é um documento que é exibido em um navegador da web e pode conter texto, imagens, vídeos, links e outros elementos. Algumas das principais funcionalidades de uma página web incluem: vizualiação e navegação pelos dados reais da empresa..',
     fadeIn: 'up',
   },
@@ -230,12 +230,12 @@ export const navbarItems = [
   },
   {
     icon: FaUserGraduate,
-    href: '#Me',
-    title: 'O que pretendo?',
+    href: '#Formação',
+    title: 'Formação',
   },
   {
     icon: HiInformationCircle,
-    href: '#Projects',
+    href: '#Me',
     title: 'Projetos',
   },
   {

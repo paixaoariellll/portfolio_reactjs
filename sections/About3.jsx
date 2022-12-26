@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { TypingText } from '../components/CustomTexts';
 import styles from '../styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
 
@@ -12,20 +13,27 @@ const About3 = () => (
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
     >
+      <TypingText
+        title="Detalhista"
+        textStyles="text-2xl w-full text-center font-extrabold"
+      />
       <motion.p
         variants={fadeIn('right', 'tween', 0, 1)}
-        className={`${styles.xPaddings} mt-2 flex font-normal sm:text-xl text-lg  text-center text-secoundary-white`}
+        className={`${styles.xPaddings}`}
       >
-        <span className="w-2/4 font-extrabold text-white">Sou detalhista</span>
-        <span className="w-3/4 text-gray-400 text-justify">
-          <span className="flex text-white mb-2">Educação primária</span>
-          "Por ser o mais novo de 7 filhos (10 anos de diferença entre mim e o
-          mais velho), não conseguiria meu espaço se tentasse ser o maior, nem o
-          mais forte e muito menos o mais inteligente.
-          <br />
-          Sendo assim, procurei ser mais atento que os demais e contribuia com
-          atenção aos detalhes que passavam despercebidos por vários olhares
-          antes de chegar em mim."
+        <span className="mt-2 flex flex-col bg-[rgb(26,26,26)] rounded-xl p-4 w-full font-normal sm:text-xl text-lg text-center">
+          <span className="text-xl mb-4 text-center w-full font-extrabold text-gray-400">
+            Educação primária
+          </span>
+          <span className="!text-gray-300 text-justify">
+            "Por ser o mais novo de 7 filhos (10 anos de diferença entre mim e o
+            mais velho), não conseguiria meu espaço se tentasse ser o maior, nem
+            o mais forte e muito menos o mais inteligente.
+            <br />
+            Sendo assim, procurei ser mais atento que os demais e contribuia com
+            atenção aos detalhes que passavam despercebidos por vários olhares
+            antes de chegar em mim."
+          </span>
         </span>
       </motion.p>
     </motion.div>
