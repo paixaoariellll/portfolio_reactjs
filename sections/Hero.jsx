@@ -7,7 +7,10 @@ import { slideIn, staggerContainer, textVariant } from '../utils/motion';
 
 const Hero = () => (
   <>
-    <section id="Hero" className={`${styles.yPaddings} sm:pr-6 sm:pl-6 `}>
+    <section
+      id="Hero"
+      className={`${styles.yPaddings} relative sm:pr-6 sm:pl-6 `}
+    >
       <motion.div
         variants={staggerContainer}
         initial="hidden"

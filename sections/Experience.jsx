@@ -15,11 +15,11 @@ const Experience = () => (
       viewport={{ once: false, amount: 0.25 }}
     >
       <TypingText
-        title="Informações complementares"
-        textStyles="text-center text-secondary-white font-bold p-10 text-3xl"
+        title="Conhecimento estimado das linguagens"
+        textStyles="text-4xl w-full text-center font-extrabold text-white"
       />
       <div className="flex flex-wrap justify-center">
-        {skills.map(skill => (
+        {skills.map((skill) => (
           <motion.div
             variants={textVariant(`${skill.time}`)}
             key={skill.name}

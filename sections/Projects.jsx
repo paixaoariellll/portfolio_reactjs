@@ -10,8 +10,8 @@ const Projects = () => (
   <section id="Projects" className={`${styles.paddings} relative z-10`}>
     <div className="p-5">
       <TypingText
-        title="Projetos Desenvolvidos"
-        textStyles="text-center text-slate-700 dark:text-secondary-white font-bold p-10 mb-24 text-3xl"
+        title="Projetos desenvolvidos"
+        textStyles="text-4xl w-full text-center font-extrabold text-white"
       />
       <motion.div
         variants={staggerContainer}
