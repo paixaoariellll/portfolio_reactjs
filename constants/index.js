@@ -134,29 +134,19 @@ export const skills = [
 
 export const exploreWorlds = [
   {
-    id: 'world-1',
+    id: 'CEP',
     imgUrl: project01,
-    title: 'The Hogwarts',
+    title: 'CEP',
   },
   {
-    id: 'world-2',
+    id: 'CNPJ',
     imgUrl: project02,
-    title: 'The Upside Down',
+    title: 'CNPJ',
   },
   {
-    id: 'world-3',
+    id: '',
     imgUrl: project03,
     title: 'Kadirojo Permai',
-  },
-  {
-    id: 'world-4',
-    imgUrl: project04,
-    title: 'Paradise Island',
-  },
-  {
-    id: 'world-5',
-    imgUrl: project05,
-    title: 'Hawkins Labs',
   },
 ];
 
@@ -214,6 +204,55 @@ export const links = [
     icon: IoCheckmarkCircleSharp,
     description:
       'Compartilhar meus conhecimentos e experiências com outras pessoas que estão interessadas em aprender a programar.',
+  },
+];
+/* 
+https://www.shadertoy.com/embed/4sXBRn? agua viva
+https://www.shadertoy.com/embed/7dyyRy? sound 
+https://www.shadertoy.com/embed/ldd3DB? peixes
+https://www.shadertoy.com/embed/XtGGRt? aurora
+https://www.shadertoy.com/embed/4ttSWf? floresta de montanhas
+https://www.shadertoy.com/embed/MsVXWW? Nebulosa de fogo
+https://www.shadertoy.com/embed/4dSfDK? Circulo negra
+https://www.shadertoy.com/embed/XsjGRd? Planeta terra
+https://www.shadertoy.com/embed/4t3BWl? Matrix
+ */
+
+export const temas = [
+  {
+    link: '4sXBRn',
+    display: 'Agua Viva'
+  },
+  {
+    link: '7dyyRy',
+    display: 'Onda Musical'
+  },
+  {
+    link: 'ldd3DB',
+    display: 'Pegue os Peixes'
+  },
+  {
+    link: 'XtGGRt',
+    display: 'Aurora'
+  },
+  {
+    link: '4ttSWf',
+    display: 'Floresta Montanhosa'
+  },
+  {
+    link: 'MsVXWW',
+    display: 'Nebulosa de fogo'
+  },
+  {
+    link: '4dSfDK',
+    display: 'Círculo Sombrio'
+  },
+  {
+    link: 'XsjGRd',
+    display: 'Planeta terra'
+  }, {
+    link: '4t3BWl',
+    display: 'Matrix'
   },
 ];
 

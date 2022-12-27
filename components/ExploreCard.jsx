@@ -25,7 +25,7 @@ const ExploreCard = ({ id, title, imgUrl, index, active, handleClick }) => (
       unoptimized
     />
     {active !== id ? (
-      <h3 className="font-semibold sm:text-[26px] text-[18px] z-0 text-white absolute lg:bottom-20 lg:rotate-[-90deg]">
+      <h3 className="font-semibold flex justify-center sm:text-[26px] text-[18px] z-0 text-white absolute lg:bottom-20 lg:rotate-[-90deg]">
         {title}
       </h3>
     ) : (
@@ -45,9 +45,6 @@ const ExploreCard = ({ id, title, imgUrl, index, active, handleClick }) => (
         <h2 className="mt-[24px] font-bold sm:text-[32px] text-[24px] text-white">
           {title}
         </h2>
-        <p className="font-normal text-[16px] leading-[20px] text-white uppercase">
-          Clique para visualizar
-        </p>
       </div>
     )}
   </motion.div>
