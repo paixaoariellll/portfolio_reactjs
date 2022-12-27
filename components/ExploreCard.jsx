@@ -5,8 +5,17 @@ import Image from 'next/image';
 import styles from '../styles';
 import { fadeIn } from '../utils/motion';
 import headset from '../public/headset.svg';
+import { Cep, Cnpj } from '../sections';
 
-const ExploreCard = ({ id, title, imgUrl, index, active, handleClick }) => (
+const ExploreCard = ({
+  id,
+  content,
+  title,
+  imgUrl,
+  index,
+  active,
+  handleClick,
+}) => (
   <motion.div
     variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
     className={`relative ${
@@ -24,8 +33,10 @@ const ExploreCard = ({ id, title, imgUrl, index, active, handleClick }) => (
       height={50}
       unoptimized
     />
+    {id === 'CEP' && id === active ? <Cep /> : ''}
+    {id === 'CNPJ' && id === active ? <Cnpj /> : ''}
     {active !== id ? (
-      <h3 className="font-semibold flex justify-center sm:text-[26px] text-[18px] z-0 text-white absolute lg:bottom-20 lg:rotate-[-90deg]">
+      <h3 className="font-semibold sm:text-[26px] text-[18px] z-0 text-white absolute lg:bottom-20 lg:rotate-[-90deg]">
         {title}
       </h3>
     ) : (
@@ -39,11 +50,11 @@ const ExploreCard = ({ id, title, imgUrl, index, active, handleClick }) => (
             height={10}
             alt="headset"
             unoptimized
-            className="w-1/2 h-1/2 object-contain"
+            className="w-1/2 h-1/2 object-contain absolute"
           />
         </div>
         <h2 className="mt-[24px] font-bold sm:text-[32px] text-[24px] text-white">
-          {title}
+          {content}
         </h2>
       </div>
     )}

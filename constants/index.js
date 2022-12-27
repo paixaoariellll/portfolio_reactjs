@@ -5,10 +5,11 @@ import {
   IoLogoJavascript
 } from 'react-icons/io5';
 import { AiFillHome, AiFillIdcard, AiFillProject, AiFillHtml5 } from 'react-icons/ai';
-import { FaUserGraduate } from 'react-icons/fa';
-import { HiInformationCircle } from 'react-icons/hi';
-import { MdWork } from 'react-icons/md';
+import { FaUserGraduate, FaShippingFast } from 'react-icons/fa';
+import { HiInformationCircle, HiOutlineDocumentSearch } from 'react-icons/hi';
+import { MdPayment } from 'react-icons/md';
 import { VscChecklist } from 'react-icons/vsc';
+import { RiLoginBoxLine } from 'react-icons/ri';
 import Me from '../public/Me.jpg'
 import {
   SiCsharp,
@@ -25,6 +26,10 @@ import project03 from '../public/project03.jpeg';
 import project04 from '../public/project04.jpeg';
 import project05 from '../public/project05.jpeg';
 import project06 from '../public/project06.jpeg';
+import api1 from '../public/portal.png';
+import api2 from '../public/vs0.png';
+import api3 from '../public/vs1.png';
+
 
 export const projects = [
   {
@@ -132,21 +137,77 @@ export const skills = [
   },
 ];
 
+export const iconSteps = [
+  {
+    path: 'login',
+    display: 'Autenticação',
+    icon: RiLoginBoxLine,
+  },
+  {
+    path: 'shipping',
+    display: 'Endereço de entrega',
+    icon: FaShippingFast,
+  },
+  {
+    path: 'payment',
+    display: 'Método de pagamento',
+    icon: MdPayment,
+  },
+  {
+    path: 'placeOrder',
+    display: 'Revisão da compra',
+    icon: HiOutlineDocumentSearch,
+  },
+];
+
+export const Cep = {
+  cep01: [
+    {
+      id: 'camp-01',
+      name: 'Rua',
+      type: 'address',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-02',
+      name: 'Bairro',
+      type: 'neighborhood',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-03',
+      name: 'Cidade',
+      type: 'city',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-04',
+      name: 'Estado',
+      type: 'state',
+      fadeIn: 'up',
+    },
+  ],
+};
+
 export const exploreWorlds = [
   {
     id: 'CEP',
-    imgUrl: project01,
+    imgUrl: api1,
     title: 'CEP',
+    content: 'Digite o número do CEP que deseja pesquisar',
   },
   {
     id: 'CNPJ',
-    imgUrl: project02,
+    imgUrl: api2,
     title: 'CNPJ',
+    content: 'Digite o número do CEP que deseja pesquisar',
+
   },
   {
-    id: '',
-    imgUrl: project03,
-    title: 'Kadirojo Permai',
+    id: 'Clima',
+    imgUrl: api3,
+    title: 'Clima',
+    content: 'Digite o nome da cidade que deseja pesquisar',
   },
 ];
 
@@ -217,6 +278,59 @@ https://www.shadertoy.com/embed/4dSfDK? Circulo negra
 https://www.shadertoy.com/embed/XsjGRd? Planeta terra
 https://www.shadertoy.com/embed/4t3BWl? Matrix
  */
+
+export const Cnpj = {
+  cnpj01: [
+    {
+      id: 'camp-01',
+      name: 'Razão Social',
+      type: 'razao_social',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-02',
+      name: 'Nome Fantasia',
+      type: 'nome_fantasia',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-03',
+      name: 'CNPJ',
+      type: 'cnpj',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-04',
+      name: 'Cnae Fiscal',
+      type: 'cnae_fiscal',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-05',
+      name: 'CNAE Fiscal Descrição',
+      type: 'cnae_fiscal_descricao',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-06',
+      name: 'Natureza Juridíca',
+      type: 'natureza_juridica',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-07',
+      name: 'Situação Cadastral',
+      type: 'situacao_cadastral',
+      fadeIn: 'up',
+    },
+    {
+      id: 'camp-08',
+      name: 'Situação Cadastral Descrição',
+      type: 'descricao_situacao_cadastral',
+      fadeIn: 'up',
+    },
+  ],
+};
 
 export const temas = [
   {

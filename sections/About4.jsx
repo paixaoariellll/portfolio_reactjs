@@ -22,7 +22,7 @@ const About4 = () => (
         variants={fadeIn('left', 'tween', 0, 1)}
         className={`${styles.xPaddings}`}
       >
-        <span className="mt-2 flex flex-col bg-[rgb(26,26,26)] rounded-xl p-4 w-full font-normal sm:text-xl text-lg text-center">
+        <span className="mt-2 flex flex-col glassmorphism rounded-xl p-4 w-full font-normal sm:text-xl text-lg text-center">
           <span className="text-xl mb-4 text-center w-full font-extrabold text-gray-400">
             Herança proloquial
           </span>

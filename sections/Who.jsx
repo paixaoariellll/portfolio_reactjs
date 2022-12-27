@@ -6,7 +6,7 @@ import styles from '../styles';
 import { staggerContainer } from '../utils/motion';
 
 const Who = () => (
-  <section className={`${styles.paddings} z-10`}>
+  <section className={`${styles.paddings} relative z-30`}>
     <motion.div
       id="About"
       variants={staggerContainer}
@@ -16,7 +16,7 @@ const Who = () => (
     >
       <TypingText
         title="Quem Sou eu?"
-        textStyles="text-center text-secondary-white font-bold p-10 text-6xl"
+        textStyles="text-center !font-bold p-10 text-6xl"
       />
     </motion.div>
   </section>

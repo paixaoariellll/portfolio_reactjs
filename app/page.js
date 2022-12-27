@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import { Footer, Nav, Navbar } from '../components';
-import { GiJellyfish, GiUfo } from 'react-icons/gi';
+import { GiUfo } from 'react-icons/gi';
 import { CiRainbow } from 'react-icons/ci';
-import { Who, About, About2, About3, About4, About6, About7, About8, Experience, Explore, Projects, Feedback, Hero, Me, Services, World } from '../sections';
+import { Who, About, About2, About3, About4, About5, About6, About7, About8, Experience, Explore, Projects, Feedback, Hero, Me, Services, World } from '../sections';
 /*
 https://www.shadertoy.com/embed/4sXBRn? agua viva
 https://www.shadertoy.com/embed/7dyyRy? sound 
@@ -54,15 +54,19 @@ const Page = () => {
       <div className="overflow-hidden max-w-screen">
         <Hero />
         <Who />
-        <div className="grid bg-[rgba(0,0,0,0.8)] grid-cols-2 gap-2 z-0 pointer-events-none">
-          <About />
-          <About2 />
-          <About3 />
-          <About4 />
-          <About6 />
-          <About7 />
+        <div className="flex flex-col lg:flex-row md:flex-col sm:flex-col gap-2 z-0 pointer-events-none">
+          <div className="w-full lg:w-1/2 md:w-full sm:w-full xs:w-full p-4 flex md:flex-col">
+            <About />
+            <About3 />
+            <About6 />
+          </div>
+          <div className="w-full lg:w-1/2 md:w-full sm:w-full xs:w-full p-4 flex md:flex-col">
+            <About2 />
+            <About4 />
+            <About7 />
+          </div>
         </div>
-        <div className="bg-[rgb(26,26,26)] relative z-40">
+        <div className="bg-[rgb(26,26,26)] relative z-30">
           <About8 />
         </div>
         <div className="relative z-20">
@@ -73,7 +77,6 @@ const Page = () => {
           <Explore />
           <World />
         </div>
-
         <Feedback />
         <Footer />
       </div>

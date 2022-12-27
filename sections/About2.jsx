@@ -22,7 +22,7 @@ const About2 = () => (
         variants={fadeIn('left', 'tween', 0, 1)}
         className={`${styles.xPaddings}`}
       >
-        <span className="mt-2 flex bg-[rgb(26,26,26)]  rounded-xl p-4 flex-col w-full font-normal sm:text-xl text-lg text-center">
+        <span className="mt-2 flex glassmorphism rounded-xl p-4 flex-col w-full font-normal sm:text-xl text-lg text-center">
           <span className="text-xl mb-4 text-center w-full font-extrabold text-gray-400">
             Só levanto quando termino!
           </span>
