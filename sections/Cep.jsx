@@ -30,16 +30,19 @@ const Insights = () => {
   };
 
   return (
-    <section id="cep" className={`${styles.xPaddings} -top-40 relative z-10`}>
+    <section
+      id="cep"
+      className={`${styles.xPaddings} relative z-40 h-2/3 w-full`}
+    >
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: false, amount: 0.25 }}
         className="max-w-screen-xl mx-auto"
       >
         <div className="grid w-full h-full gap-5">
-          <div className=" rounded-lg p-10">
+          <div className=" rounded-lg">
             <span className="text-center my-2">
               <TypingText
                 title="Pesquisar CEP"
@@ -52,7 +55,7 @@ const Insights = () => {
                   type="text"
                   id="cep"
                   onChange={(e) => setCampo(e.target.value.replace(/\D/g, ''))}
-                  className="rounded-xl px-2"
+                  className="rounded-xl p-2"
                 />
                 <button
                   className="text-white px-1"
@@ -74,7 +77,7 @@ const Insights = () => {
                       <motion.div
                         key={cep.id}
                         variants={fadeIn(`${cep.fadeIn}`, 'tween', 0, 1)}
-                        className="text-md  grid gap-y-3 col-span-1 w-full p-5  rounded-xl text-center shadow glassmorphism-2  shadow-slate-600 "
+                        className="text-md  grid gap-y-3 col-span-1 w-full p-5  rounded-xl text-center shadow glassmorphism"
                       >
                         <label
                           className="text-md text-white font-mono"

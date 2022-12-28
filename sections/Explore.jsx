@@ -6,6 +6,7 @@ import styles from '../styles';
 import { staggerContainer } from '../utils/motion';
 import { ExploreCard, TypingText } from '../components';
 import { exploreWorlds } from '../constants';
+import { Cep, Cnpj } from '.';
 
 const Explore = () => {
   const [active, setActive] = useState('world-2');
@@ -20,17 +21,35 @@ const Explore = () => {
       >
         <TypingText
           title="Exemplos de APIs"
-          textStyles="text-center text-3xl"
+          textStyles="text-center text-4xl !font-bold"
         />
-        <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
+        <div className="mt-[10px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
           {exploreWorlds.map((world, index) => (
-            <ExploreCard
-              key={world.id}
-              {...world}
-              index={index}
-              active={active}
-              handleClick={setActive}
-            />
+            <>
+              <ExploreCard
+                key={world.id}
+                {...world}
+                index={index}
+                active={active}
+                handleClick={setActive}
+                className="absolute"
+              />
+              {world.id === active && world.id === 'CEP' ? (
+                <div className="absolute">
+                  <Cep />
+                </div>
+              ) : (
+                ''
+              )}
+              {world.id === active && world.id === 'CNPJ' ? (
+                <div className="absolute flex flex-row">
+                  <div className="w-36 h-[1px]" />
+                  <Cnpj />
+                </div>
+              ) : (
+                ''
+              )}
+            </>
           ))}
         </div>
       </motion.div>

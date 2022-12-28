@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FiSearch } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-import { TitleText, TypingText } from '../components';
+import { TypingText } from '../components';
 import { Cnpj } from '../constants';
 import styles from '../styles';
 import { staggerContainer, fadeIn } from '../utils/motion';
@@ -39,20 +39,19 @@ const CnpjSearch = () => {
   };
 
   return (
-    <section id="cnpj" className={`${styles.paddings} -top-40 relative z-10`}>
+    <section
+      id="cnpj"
+      className={`${styles.xPaddings} relative z-40 h-2/3 w-full`}
+    >
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
+        viewport={{ once: false, amount: 0.25 }}
         className="max-w-screen-xl mx-auto"
       >
-        <TitleText
-          title={<span className="text-white">Exemplo APIS de consulta</span>}
-          textStyles="text-center text-white"
-        />
         <div className="grid w-full h-full gap-5">
-          <div className=" rounded-lg p-10">
+          <div className=" rounded-lg">
             <span className="text-center my-2">
               <TypingText
                 title="Pesquisar CNPJ"
@@ -65,7 +64,7 @@ const CnpjSearch = () => {
                   type="text"
                   id="cnpj"
                   onChange={(e) => setCampo(e.target.value.replace(/\D/g, ''))}
-                  className="rounded-xl shadow-sm shadow-slate-700 px-2"
+                  className="rounded-xl shadow-sm shadow-slate-700 p-2"
                 />
                 <button
                   className="text-white  px-1"
@@ -78,13 +77,13 @@ const CnpjSearch = () => {
             </form>
             <div>
               <form onSubmit={handleSubmit((data) => console.log(data))}>
-                <div className="mt-4 pb-5 grid gap-y-3  rounded-xl  p-2">
+                <div className="mt-4 pb-5 grid gap-y-3 rounded-xl p-2">
                   <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-5">
                     {Cnpj.cnpj01.map((cnpj) => (
                       <motion.div
                         key={cnpj.id}
                         variants={fadeIn(`${cnpj.fadeIn}`, 'tween', 0, 1)}
-                        className="text-md  grid gap-y-3 col-span-1 w-full p-5  rounded-xl text-center shadow glassmorphism-2  shadow-slate-600 "
+                        className="text-md  grid gap-y-3 col-span-1 w-full p-5  rounded-xl text-center shadow glassmorphism"
                       >
                         <label
                           className="text-md text-white font-mono"
