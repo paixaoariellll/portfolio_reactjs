@@ -13,19 +13,4 @@ const handler = async (req, res) => {
   res.send(savedFeedback);
 };
 
-/*
- const deleteHandler = async (req, res) => {
-  await db.connect();
-  const feedback = await Feedback.findById(req.query.id);
-  if (feedback) {
-    await feedback.remove();
-    await db.disconnect();
-    res.send({ message: 'Feedback deletado com sucesso!' });
-  } else {
-    await db.disconnect();
-    res.status(404).send({ message: 'Feedback não encontrado!' });
-  }
-}; 
-*/
-
 export default handler;

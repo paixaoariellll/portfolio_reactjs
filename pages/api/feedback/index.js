@@ -1,16 +1,6 @@
 import Feedback from '../../../models/feedback';
 import db from '../../../utils/db';
 
-const handler = async (req, res) => {
-  if (req.method === "GET") {
-    return getHandler(req, res);
-  } if (req.method === "POST") {
-    return postHandler(req, res);
-  }
-  return res.status(400).send({ message: 'Deu merda!' });
-
-};
-
 // Criando um novo comentário
 const postHandler = async (req, res) => {
   await db.connect();
@@ -29,6 +19,15 @@ const getHandler = async (req, res) => {
   const feedbacks = await Feedback.find({});
   await db.disconnect();
   res.send(feedbacks);
+};
+
+const handler = async (req, res) => {
+  if (req.method === 'GET') {
+    return getHandler(req, res);
+  } if (req.method === 'POST') {
+    return postHandler(req, res);
+  }
+  return res.status(400).send({ message: 'Deu merda!' });
 };
 
 export default handler;
