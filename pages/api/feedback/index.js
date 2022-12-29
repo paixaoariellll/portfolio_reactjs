@@ -2,33 +2,33 @@ import Feedback from '../../../models/feedback';
 import db from '../../../utils/db';
 
 const handler = async (req, res) => {
-    if (req.method === "GET") {
-        return getHandler(req, res);
-    } if (req.method === "POST") {
-        return postHandler(req, res);
-    }
-    return res.status(400).send({ message: 'Deu merda!' });
+  if (req.method === "GET") {
+    return getHandler(req, res);
+  } if (req.method === "POST") {
+    return postHandler(req, res);
+  }
+  return res.status(400).send({ message: 'Deu merda!' });
 
 };
 
 // Criando um novo comentário
 const postHandler = async (req, res) => {
-    await db.connect();
-    const newFeedback = new Feedback({
-        nome: 'Anônimo',
-        avaliacao: 5,
-        comentário: 'Escreva seu comentário',
-    });
-    const feedbacks = await newFeedback.save();
-    await db.disconnect();
-    res.send({ message: 'Comentário adicionado com sucesso!', feedbacks });
+  await db.connect();
+  const newFeedback = new Feedback({
+    nome: 'Anônimo',
+    avaliacao: 5,
+    comentário: 'Escreva seu comentário',
+  });
+  const feedbacks = await newFeedback.save();
+  await db.disconnect();
+  res.send({ message: 'Comentário adicionado com sucesso!', feedbacks });
 };
 
 const getHandler = async (req, res) => {
-    await db.connect();
-    const feedbacks = await Feedback.find({});
-    await db.disconnect();
-    res.send(feedbacks);
+  await db.connect();
+  const feedbacks = await Feedback.find({});
+  await db.disconnect();
+  res.send(feedbacks);
 };
 
 export default handler;
