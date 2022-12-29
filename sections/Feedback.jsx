@@ -1,53 +1,176 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { feedbacks } from '../constants';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import styles from '../styles';
-import { fadeIn, staggerContainer } from '../utils/motion';
+import { staggerContainer } from '../utils/motion';
+import { TypingText } from '../components';
 
-const Feedback = () => (
-  <section id="Feedback" className={`${styles.paddings} relative z-10`}>
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.25 }}
-      className={`${styles.innerWidth} mx-auto flex flex-col gap-6`}
-    >
-      <ul className="grid grid-cols-4 gap-x-10">
-        {feedbacks.messages.map((message, index) => (
-          <motion.div
-            key={index}
-            variants={fadeIn(`${message.fadeIn}`, 'tween', 0.2, 1)}
-            className="flex-[0.5] lg:max-w-[370px] flex justify-end flex-col gradient-05 sm:p-8 p-4 rounded-[32px] border-[1px] border-[#6a6a6a] relative"
+const Fdbs = (props) => {
+  const { avaliação } = props;
+  const filledStars = Math.floor(avaliação);
+  const emptyStars = 5 - filledStars;
+
+  return (
+    <div className="flex">
+      {Array.from({ length: filledStars }).map((_, index) => (
+        <AiFillStar key={`filled-${index}`} />
+      ))}
+      {avaliação % 1 !== 0 && <AiOutlineStar key="half" />}
+      {Array.from({ length: emptyStars }).map((_, index) => (
+        <AiOutlineStar key={`empty-${index}`} />
+      ))}
+    </div>
+  );
+};
+
+const FeedbackList = () => {
+  const [feedbacks, setFeedbacks] = useState([]);
+  const [nome, setNome] = useState('');
+  const [comentário, setComentário] = useState('');
+  const [avaliação, setAvaliação] = useState('');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetch('/api/feedback');
+      const data = await result.json();
+      setFeedbacks(data);
+    };
+    fetchData();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch(`/api/feedback/${e}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ nome, avaliação, comentário }),
+    });
+    const result = await response.json();
+    console.log(result);
+  };
+
+  return (
+    <section id="feedback" className={`${styles.paddings} relative z-10`}>
+      <form className="glassmorphism-2 p-5 rounded-lg" onSubmit={handleSubmit}>
+        <TypingText
+          title="Envie seu feedback"
+          textStyles="text-center text-white font-bold p-5 mb-5 text-xl"
+        />
+        <div className="mb-5 grid grid-cols-2 gap-x-10">
+          <div>
+            <label
+              htmlFor="nome"
+              className="block text-gray-400 text-sm font-bold mb-2"
+            >
+              Nome:
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              id="nome"
+              nome="nome"
+              required
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="avaliação"
+              className="block text-gray-400 text-sm font-bold mb-2"
+            >
+              Classificação:
+            </label>
+            <select
+              className="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="avaliação"
+              nome="avaliação"
+              required
+              value={avaliação}
+              onChange={(e) => setAvaliação(e.target.value)}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+        <div className="mb-5">
+          <label
+            htmlFor="comentário"
+            className="block text-gray-400 text-sm font-bold mb-2"
           >
-            <li className="w-full items-center flex rounded-full justify-center p-2">
-              <Image
-                src={message.image}
-                alt={`Foto de ${message.name}`}
-                width={70}
-                height={70}
-                unoptimized
-                className="flex justify-center text-center rounded-full"
-              />
-            </li>
-            <li>
-              <h4 className="font-bold sm:text-[24px] text-center text-[26px] sm:leading-[40px] leading-[36px] text-white">
-                {message.name}
-              </h4>
-              <p className=" mt-[8px] font-normal sm:text-[18px] text-[12px] sm:leading-[22px] leading-[16px] text-white">
-                Recrutador - DivCode
-              </p>
-            </li>
-            <li className="overflow-scroll max-h-36 min-h-36 mt-[24px] font-normal sm:text-[20px] text-[14px] sm:leading-[45px] leading-[39px] text-white">
-              <p>{message.description}</p>
-            </li>
-          </motion.div>
-        ))}
-      </ul>
-    </motion.div>
-  </section>
-);
+            Comentário:
+          </label>
+          <textarea
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="comentário"
+            nome="comentário"
+            required
+            value={comentário}
+            onChange={(e) => setComentário(e.target.value)}
+            maxLength="500"
+          />
+          <div className="text-gray-400 text-xs">
+            {500 - comentário.length} caracteres restantes
+          </div>
+        </div>
+        <button
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Enviar
+        </button>
+      </form>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        className="max-w-screen-xl mx-auto"
+      >
+        <TypingText
+          title="Feedbacks"
+          textStyles="text-center !text-white !font-bold p-10 mb-5 text-5xl"
+        />
+        <div className="grid lg:grid-cols-4 w-full h-full md:grid-cols-2 sm:grid-cols-1 sm:gap-y-5 md:gap-y-5 gap-x-5 ">
+          {feedbacks.map((feedback, index) => (
+            <ul
+              key={index}
+              className="text-white p-5 h-[300px] glassmorphism rounded-xl shadow-lg shadow-slate-900"
+            >
+              <li>
+                <div className="flex justify-center">
+                  <div className="grid gap-y-3">
+                    <div className="text-md">
+                      <h2 className="text-white font-bold text-xl p-3">
+                        {feedback.nome}
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-center border h-fit max-h-[190px] p-4 text-sm border-slate-700 rounded-md overflow-hidden">
+                  <p className="font-mono h-full">{feedback.comentário}</p>
+                </div>
+              </li>
+              <div className="flex items-end justify-between pt-2">
+                <Fdbs avaliação={feedback.avaliação} />{' '}
+                <span className="text-[#ffffff80] font-mono">
+                  {' '}
+                  {feedback.avaliação}
+                </span>
+              </div>
+            </ul>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
 
-export default Feedback;
+export default FeedbackList;

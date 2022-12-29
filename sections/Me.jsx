@@ -62,7 +62,7 @@ const Me = () => (
                   alt="Eu"
                   width={300}
                   height={300}
-                  className="rounded-full shadow-md  shadow-slate-800"
+                  className="rounded-full cursor-move shadow-md shadow-slate-800"
                   unoptimized
                   onDragStart={ImpedirArrastar}
                 />

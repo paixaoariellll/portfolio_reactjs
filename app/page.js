@@ -5,6 +5,7 @@ import { Footer, Nav, Navbar } from '../components';
 import { GiUfo } from 'react-icons/gi';
 import { CiRainbow } from 'react-icons/ci';
 import { Who, About, About2, About3, About4, About5, About6, About7, About8, Experience, Explore, Projects, Feedback, Hero, Me, Services, World } from '../sections';
+import { IoPlanet } from 'react-icons/io5';
 /*
 https://www.shadertoy.com/embed/4sXBRn? agua viva
 https://www.shadertoy.com/embed/7dyyRy? sound 
@@ -31,7 +32,7 @@ const Page = () => {
     <>
       <iframe
         title="Background"
-        className="w-full z-10 fixed min-h-screen"
+        className="w-full z-10 fixed min-h-screen cursor-move"
         src={src}
       />
       <div className="fixed z-50 right-2 gap-x-10 flex top-1">
@@ -44,6 +45,9 @@ const Page = () => {
             <button type="button" className="rounded-full bg-violet-500 hover:bg-violet-800 hover:text-white shadow-sm shadow-slate-900 p-2" onClick={() => alterarEnd('https://www.shadertoy.com/embed/tsScWR?gui=true&t=10&paused=false&muted=true&autoplay=2')}>
               <GiUfo />
             </button>
+            <button type="button" className="rounded-full bg-green-700 hover:text-white shadow-sm shadow-slate-900 p-2" onClick={() => alterarEnd('https://www.shadertoy.com/embed/4ts3z2?gui=true&t=10&paused=false&muted=false&autoplay=2')}>
+              <IoPlanet />
+            </button>
           </div>
         </div>
       </div>
@@ -54,13 +58,13 @@ const Page = () => {
       <div className="overflow-hidden max-w-screen">
         <Hero />
         <Who />
-        <div className="flex flex-col lg:flex-row md:flex-col sm:flex-col gap-2 z-0 pointer-events-none">
-          <div className="w-full lg:w-1/2 md:w-full sm:w-full xs:w-full p-4 flex md:flex-col">
+        <div className="flex flex-col lg:flex-row md:flex-col sm:flex-col gap-2 z-0">
+          <div className="w-full lg:w-1/2 md:w-full sm:w-full xs:w-full p-4 flex md:flex-col pointer-events-none">
             <About />
             <About3 />
             <About6 />
           </div>
-          <div className="w-full lg:w-1/2 md:w-full sm:w-full xs:w-full p-4 flex md:flex-col">
+          <div className="w-full lg:w-1/2 md:w-full sm:w-full xs:w-full p-4 flex md:flex-col pointer-events-none">
             <About2 />
             <About4 />
             <About7 />

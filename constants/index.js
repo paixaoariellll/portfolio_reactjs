@@ -277,8 +277,7 @@ https://www.shadertoy.com/embed/MsVXWW? Nebulosa de fogo
 https://www.shadertoy.com/embed/4dSfDK? Circulo negra
 https://www.shadertoy.com/embed/XsjGRd? Planeta terra
 https://www.shadertoy.com/embed/4t3BWl? Matrix
- */
-
+*/
 export const Cnpj = {
   cnpj01: [
     {
@@ -403,31 +402,3 @@ export const navbarItems = [
   },
 ];
 
-export const feedbacks = {
-  messages: [
-    {
-      name: 'Caio Abreu',
-      image: Me,
-      description: 'Excelente trabalho no novo recurso! A implementação ficou muito clara e fácil de entender.',
-      fadeIn: 'up'
-    },
-    {
-      name: 'Gabriel Augusto',
-      image: Me,
-      description: 'Obrigado por sua dedicação em corrigir o bug na função de login. Agora o sistema está rodando sem problemas.',
-      fadeIn: 'down'
-    },
-    {
-      name: 'Pedro Paulo',
-      image: Me,
-      description: 'Gostaria de expressar minha gratidão pelo seu trabalho na melhoria da performance do aplicativo.',
-      fadeIn: 'up'
-    },
-    {
-      name: 'José Antonio',
-      image: Me,
-      description: 'Gostaria de expressar minha gratidão pelo seu trabalho na melhoria da performance.',
-      fadeIn: 'down'
-    },
-  ],
-};

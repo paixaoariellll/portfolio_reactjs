@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.2.1",
     "eslint-config-next": "13.0.3",
     "framer-motion": "^7.6.7",
+    "mongoose": "^6.8.2",
     "next": "13.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -33,5 +35,17 @@
     "prettier": "^2.8.1",
     "tailwindcss": "^3.2.4",
     "vanta": "^0.5.24"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paixaoariellll/portfolio_reactjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paixaoariellll/portfolio_reactjs/issues"
+  },
+  "homepage": "https://github.com/paixaoariellll/portfolio_reactjs#readme"
 }
