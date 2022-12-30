@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Footer, Nav, Navbar } from '../components';
 import { GiUfo } from 'react-icons/gi';
+import { IoBowlingBallSharp } from 'react-icons/io';
 import { CiRainbow } from 'react-icons/ci';
 import { Who, About, About2, About3, About4, About5, About6, About7, About8, Experience, Explore, Projects, Feedback, Hero, Me, Services, World } from '../sections';
 import { IoPlanet } from 'react-icons/io5';
@@ -22,6 +23,7 @@ https://www.shadertoy.com/embed/4dGXRz? Puzzle
 https://www.shadertoy.com/embed/MddGzf? Atari
 https://www.shadertoy.com/embed/XddXWf? Gravidade
 https://www.shadertoy.com/embed/tsScWR? Bolas coloridas
+https://www.shadertoy.com/embed/dtX3zl? Lindo Mundo Elfo
  */
 const Page = () => {
   const [src, setSrc] = useState('https://www.shadertoy.com/embed/XtGGRt?gui=true&t=10&paused=false&muted=true&autoplay=1');
@@ -42,10 +44,13 @@ const Page = () => {
             <button type="button" className="rounded-full bg-green-500 hover:bg-green-800 hover:text-white shadow-sm shadow-slate-900 p-2" onClick={() => alterarEnd('https://www.shadertoy.com/embed/XtGGRt?gui=true&t=10&paused=false&muted=true&autoplay=1')}>
               <CiRainbow />
             </button>
-            <button type="button" className="rounded-full bg-violet-500 hover:bg-violet-800 hover:text-white shadow-sm shadow-slate-900 p-2" onClick={() => alterarEnd('https://www.shadertoy.com/embed/tsScWR?gui=true&t=10&paused=false&muted=true&autoplay=2')}>
+            <button type="button" className="rounded-full bg-violet-800 hover:bg-violet-700 hover:text-white shadow-sm shadow-slate-900 p-2" onClick={() => alterarEnd('https://www.shadertoy.com/embed/tsScWR?gui=true&t=10&paused=false&muted=true&autoplay=2')}>
+              <IoBowlingBallSharp />
+            </button>
+            <button type="button" className="rounded-full bg-gray-700 hover:text-white shadow-sm shadow-slate-900 p-2" onClick={() => alterarEnd('https://www.shadertoy.com/embed/4ts3z2?gui=true&t=10&paused=false&muted=false&autoplay=2')}>
               <GiUfo />
             </button>
-            <button type="button" className="rounded-full bg-green-700 hover:text-white shadow-sm shadow-slate-900 p-2" onClick={() => alterarEnd('https://www.shadertoy.com/embed/4ts3z2?gui=true&t=10&paused=false&muted=false&autoplay=2')}>
+            <button type="button" className="rounded-full bg-blue-900 hover:text-white shadow-sm shadow-slate-900 p-2" onClick={() => alterarEnd('https://www.shadertoy.com/embed/dtX3zl?gui=true&t=10&paused=false&muted=true&autoplay=2')}>
               <IoPlanet />
             </button>
           </div>
