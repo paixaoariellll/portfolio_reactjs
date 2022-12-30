@@ -41,7 +41,6 @@ const FeedbackList = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     const response = await fetch(`/api/feedback/${e}`, {
       method: 'POST',
       headers: {

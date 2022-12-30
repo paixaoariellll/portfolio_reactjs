@@ -112,13 +112,19 @@ const Me = () => (
                 textStyles=" text-secondary-white font-bold my-2 text-xl"
               />
               <div className="flex gap-x-5 text-5xl">
-                <Link href="https://github.com/paixaoariellll">
+                <Link href="https://github.com/paixaoariellll" target="_blank">
                   <AiFillGithub className="text-white hover:text-slate-400 transition-all hover:scale-110" />
                 </Link>
-                <Link href="https://www.instagram.com/ariel.paixaao/">
+                <Link
+                  href="https://www.instagram.com/ariel.paixaao/"
+                  target="_blank"
+                >
                   <AiFillInstagram className="text-white hover:text-orange-600 transition-all hover:scale-110" />
                 </Link>
-                <Link href="https://www.linkedin.com/in/ariel-paixao/">
+                <Link
+                  href="https://www.linkedin.com/in/ariel-paixao/"
+                  target="_blank"
+                >
                   <AiFillLinkedin className="text-white hover:text-indigo-400 transition-all hover:scale-110" />
                 </Link>
               </div>
