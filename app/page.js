@@ -3,10 +3,9 @@
 import { useState } from 'react';
 import { Footer, Nav, Navbar } from '../components';
 import { GiUfo } from 'react-icons/gi';
-import { IoBowlingBallSharp } from 'react-icons/io';
 import { CiRainbow } from 'react-icons/ci';
 import { Who, About, About2, About3, About4, About5, About6, About7, About8, Experience, Explore, Projects, Feedback, Hero, Me, Services, World } from '../sections';
-import { IoPlanet } from 'react-icons/io5';
+import { IoPlanet, IoBowlingBallSharp } from 'react-icons/io5';
 /*
 https://www.shadertoy.com/embed/4sXBRn? agua viva
 https://www.shadertoy.com/embed/7dyyRy? sound 
