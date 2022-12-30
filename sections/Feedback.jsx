@@ -55,79 +55,86 @@ const FeedbackList = () => {
 
   return (
     <section id="feedback" className={`${styles.paddings} relative z-10`}>
-      <form className="glassmorphism-2 p-5 rounded-lg" onSubmit={handleSubmit}>
-        <TypingText
-          title="Envie seu feedback"
-          textStyles="text-center text-white font-bold p-5 mb-5 text-xl"
-        />
-        <div className="mb-5 grid grid-cols-2 gap-x-10">
-          <div>
-            <label
-              htmlFor="nome"
-              className="block text-gray-400 text-sm font-bold mb-2"
-            >
-              Nome:
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="text"
-              id="nome"
-              nome="nome"
-              required
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="avaliação"
-              className="block text-gray-400 text-sm font-bold mb-2"
-            >
-              Classificação:
-            </label>
-            <select
-              className="shadow appearance-none border rounded w-1/4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="avaliação"
-              nome="avaliação"
-              required
-              value={avaliação}
-              onChange={(e) => setAvaliação(e.target.value)}
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </div>
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="comentário"
-            className="block text-gray-400 text-sm font-bold mb-2"
-          >
-            Comentário:
-          </label>
-          <textarea
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="comentário"
-            nome="comentário"
-            required
-            value={comentário}
-            onChange={(e) => setComentário(e.target.value)}
-            maxLength="500"
-          />
-          <div className="text-gray-400 text-xs">
-            {500 - comentário.length} caracteres restantes
-          </div>
-        </div>
-        <button
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
+      <TypingText
+        title="Deixe sua mensagem na página..."
+        textStyles="text-center !text-white !font-bold p-5 mb-5 text-3xl"
+      />
+      <div className="flex justify-center">
+        <form
+          className="flex flex-col glassmorphism items-center justify-center p-5 min-w-[300px] max-w-md rounded-lg"
+          onSubmit={handleSubmit}
         >
-          Enviar
-        </button>
-      </form>
+          <div className="flex flex-col justify-between">
+            <div className="mb-5 w-full">
+              <label
+                htmlFor="nome"
+                className="block text-gray-400 text-sm font-bold mb-2"
+              >
+                Nome:
+              </label>
+              <input
+                className="shadow appearance-none glassmorphism border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                type="text"
+                id="nome"
+                nome="nome"
+                placeholder="Digite seu nome"
+                required
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+              />
+            </div>
+            <div className="mb-5 w-full">
+              <label
+                htmlFor="avaliação"
+                className="block text-gray-400 text-sm font-bold mb-2"
+              >
+                Qual nota você daria a esse site?
+              </label>
+              <select
+                className="shadow glassmorphism appearance-none border rounded w-1/4 py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+                id="avaliação"
+                nome="avaliação"
+                required
+                value={avaliação}
+                onChange={(e) => setAvaliação(e.target.value)}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
+          <div className="mb-5 w-full">
+            <label
+              htmlFor="comentário"
+              className="block text-gray-400 text-sm font-bold mb-2"
+            >
+              Comentário:
+            </label>
+            <textarea
+              className="shadow appearance-none glassmorphism border rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
+              id="comentário"
+              nome="comentário"
+              required
+              placeholder="Escreva seu comentário"
+              value={comentário}
+              onChange={(e) => setComentário(e.target.value)}
+              maxLength="500"
+            />
+            <div className="text-gray-400 text-xs">
+              {500 - comentário.length} caracteres restantes
+            </div>
+          </div>
+          <button
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
       <motion.div
         variants={staggerContainer}
         initial="hidden"
